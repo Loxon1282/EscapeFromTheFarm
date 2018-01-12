@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
-	Rigidbody2D rb;
+	Rigidbody rb;
 	public float force = 5.0f;
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
+		rb = GetComponent<Rigidbody> ();
 		rb.isKinematic = true;
 		StartCoroutine ("TestfireDelay");
 	}
@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour {
 	}
 	public void Fire(){
 
-		rb.AddForce (new Vector2 (1, 1) * force);
+		rb.AddForce (new Vector3 (1, 1,0) * force);
 
 	}
 
