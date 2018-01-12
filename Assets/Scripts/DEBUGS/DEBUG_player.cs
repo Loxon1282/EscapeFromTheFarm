@@ -44,6 +44,6 @@ public class DEBUG_player : MonoBehaviour {
 		}
 	}
 	void Update() {
-		camera.transform.position = new Vector3 (gameObject.transform.position.x, 0, 0) + offset;
+		camera.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, 0) + offset;
 	}
 }
