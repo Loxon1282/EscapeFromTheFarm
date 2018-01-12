@@ -5,6 +5,16 @@ using UnityEngine;
 public class DEBUG_player : MonoBehaviour {
 
 	public float speed;
+	public float jumpVelocity;
+
+	public GameObject camera;
+	public Vector3 offset;
+
+	void Awake() {
+		offset = new Vector3 (camera.transform.position.x - gameObject.transform.position.x,
+			                 camera.transform.position.y,
+			camera.transform.position.z);
+	}
 
 	void FixedUpdate() {
 		/*
@@ -29,6 +39,11 @@ public class DEBUG_player : MonoBehaviour {
 		} else if (Input.GetKey (KeyCode.D)) {
 			gameObject.GetComponent<Rigidbody> ().velocity += Vector3.right * speed;
 		}
-
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			gameObject.GetComponent<Rigidbody> ().velocity += Vector3.up * jumpVelocity;
+		}
+	}
+	void Update() {
+		camera.transform.position = new Vector3 (gameObject.transform.position.x, 0, 0) + offset;
 	}
 }
