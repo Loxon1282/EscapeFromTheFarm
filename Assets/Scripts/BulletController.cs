@@ -20,6 +20,8 @@ public class BulletController : MonoBehaviour {
 	public void Fire(){
 
 		rb.AddForce (new Vector3 (1, 0.3f,0) * force);
+		rb.AddTorque (new Vector3 (0, 0, 0.005f)*force/5);
+
 
 	}
 
