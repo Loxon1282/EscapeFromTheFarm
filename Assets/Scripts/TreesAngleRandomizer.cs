@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trees_Angle_Randomizer : MonoBehaviour {
+public class TreesAngleRandomizer : MonoBehaviour {
 
 	public bool freezeX, freezeY, freezeZ;
 
