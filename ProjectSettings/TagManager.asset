@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Forage
   - Mine
+  - Baloon
   layers:
   - Default
   - TransparentFX
