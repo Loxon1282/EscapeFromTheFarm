@@ -12,11 +12,7 @@ public class BulletController : MonoBehaviour {
 		rb.isKinematic = true;
 		StartCoroutine ("TestfireDelay");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 	public void Fire(){
 
 		rb.AddForce (new Vector3 (1, 0.3f,0) * force);
