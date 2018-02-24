@@ -163,4 +163,8 @@ public class LaunchingController : MonoBehaviour {
 
 		spoonSpeed = slowSpeed;
 	}
+	void OnMouseDown(){
+		FireSpoon ();
+
+	}
 }

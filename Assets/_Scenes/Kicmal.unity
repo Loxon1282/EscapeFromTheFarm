@@ -1090,7 +1090,7 @@ MonoBehaviour:
   worldTransform: {fileID: 392544134}
   loader: {fileID: 1478554567}
   player: {fileID: 1876674753}
-  launchingVelocity: {x: 10, y: 10, z: 0}
+  launchingVelocity: {x: 20, y: 20, z: 0}
   launchingTorque: {x: 1200, y: 1200, z: 1200}
   spoonSpeed: 100
   loaderMultiplier: 5
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   jumpVelocity: 7
   camera: {fileID: 444564690}
   offset: {x: 0, y: 0, z: 0}
-  bounce: {fileID: 8300000, guid: 127d4f674384ab844b9fb5fd3542ac19, type: 3}
+  bounce: {fileID: 8300000, guid: 6ee1e297cb4182d4aa92cfcfa1170c8e, type: 3}
 --- !u!4 &1876674758 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4054502789990554, guid: 9ec060093457ad84ca2733cb15c2c41e,
@@ -1950,7 +1950,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.046
+  m_Volume: 0.812
   m_Pitch: 1
   Loop: 0
   Mute: 0
