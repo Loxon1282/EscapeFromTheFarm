@@ -10,6 +10,8 @@ public class DEBUG_player : MonoBehaviour {
 	public GameObject camera;
 	public Vector3 offset;
 
+	public AudioClip bounce;
+
 	void Awake() {
 		offset = new Vector3 (camera.transform.position.x - gameObject.transform.position.x,
 			                 camera.transform.position.y,
@@ -45,5 +47,9 @@ public class DEBUG_player : MonoBehaviour {
 	}
 	void Update() {
 		camera.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, 0) + offset;
+	}
+
+	void OnCollisionEnter(){
+		gameObject.GetComponent<AudioSource> ().PlayOneShot (bounce);
 	}
 }

@@ -15,6 +15,6 @@ public class DEBUG_FPS : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
-		fps.text = "FPS: " + 1.0f / deltaTime + " msec: " + deltaTime * 1000.0f;
+		fps.text = "FPS: " + Mathf.Round(1.0f / deltaTime) + "\n msec: " + Mathf.Round(deltaTime * 1000.0f);
 	}
 }
