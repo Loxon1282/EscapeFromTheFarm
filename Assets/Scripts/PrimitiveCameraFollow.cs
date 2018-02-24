@@ -9,6 +9,9 @@ public class PrimitiveCameraFollow : MonoBehaviour {
 	public float smoothSpeed = 0.125f;
 	public Vector3 offset;
 
+	void Start(){
+		Application.targetFrameRate = 60;
+	}
 	void FixedUpdate () {
 
 		Vector3 desiredPosition = target.position + offset;

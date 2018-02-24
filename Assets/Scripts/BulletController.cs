@@ -27,4 +27,7 @@ public class BulletController : MonoBehaviour {
 		Fire ();
 
 	}
+	void OnMouseDown(){
+		Fire ();
+	}
 }
