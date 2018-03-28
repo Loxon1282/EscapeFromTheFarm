@@ -45,6 +45,9 @@ public class LaunchingController : MonoBehaviour {
 	private bool canLaunch;
 	private bool movingUpwards; // true = moving towards 270, false = moving towards 345
 
+	[Range(-75.0f,-10.0f)]
+	public float spoonRotation;
+
 	void Awake() {
 		canMove = false;
 		canLaunch = true;
