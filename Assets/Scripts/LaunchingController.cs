@@ -15,7 +15,7 @@ public class LaunchingController : MonoBehaviour {
 
 	public GameObject spoon;
 	public GameObject animalSpot; // gameobject fixed to spoon position
-	public GameObject worldTransform; // object that is highest in hierarhy
+	public GameObject worldTransform; // object that is highest in hierarchy
 	public GameObject loader; // crank
 	public GameObject player; // animal
 
@@ -38,7 +38,7 @@ public class LaunchingController : MonoBehaviour {
 	public float spoonSpeed;
 	public int loaderMultiplier;
 
-	public float fastSpeed; // lauching spoon
+	public float fastSpeed; // launching spoon
 	public float slowSpeed; // loading spoon
 
 	private bool canMove;
