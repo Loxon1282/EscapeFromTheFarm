@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 9b21e7aa2305b3040955964c29043752
-timeCreated: 1520508610
-=======
-guid: 8b1e28e4563da4046a885defafe61d9f
-timeCreated: 1520622283
->>>>>>> 293e1d0bdc6ba450797a3f32574491788a50a2f4
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -21,8 +14,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: bfff8df6469bebe49b6e1fee25f061bf, type: 2}
+      name: Diamond_blue
+    second: {fileID: 2100000, guid: c10b8b5343459c84b8a8aa846509e6ff, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
