@@ -120,7 +120,6 @@ public class LaunchingController : MonoBehaviour {
 
 
 	// Resets player position after launch
-	void ResetPlayer() {
 		canLaunch = true;
 
 		player.transform.SetParent (animalSpot.transform);
@@ -141,7 +140,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to lowest position (370)
-	void SetSpoonToLounch() {
+	public void SetSpoonToLounch() {
 		canMove = true;
 		movingUpwards = false;
 		destinationAngle = lowerBound;
@@ -150,7 +149,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to highets position (260)
-	void FireSpoon() {
+	public void FireSpoon() {
 		canMove = true;
 		movingUpwards = true;
 		destinationAngle = upperBound;
@@ -159,7 +158,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to a middle position
-	void ResetSpoonPosition() {
+	public void ResetSpoonPosition() {
 		canMove = true;
 		destinationAngle = centerAngle;
 		movingUpwards = (spoonAngle <= centerAngle) ? false : true	;
