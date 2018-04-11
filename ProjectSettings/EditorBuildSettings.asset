@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Kicmal.unity
     guid: 000ddf562166bc14aacad5078858d2b5
+  - enabled: 1
+    path: Assets/_Scenes/StartingScene.unity
+    guid: 4ac95e01858cce84a885debbb17142ae
+  - enabled: 1
+    path: Assets/_Scenes/Winslow.unity
+    guid: d822b0c575ade2b468e0f349f9cec95b

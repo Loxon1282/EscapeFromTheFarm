@@ -25,7 +25,6 @@ public class PcLauncherController : MonoBehaviour {
         oscillator = GetComponent<Oscillator>();
         direction = 0;
         state = 0;
-
     }
 
     private void Update()
