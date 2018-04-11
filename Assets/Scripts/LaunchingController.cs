@@ -120,6 +120,7 @@ public class LaunchingController : MonoBehaviour {
 
 
 	// Resets player position after launch
+	public void ResetPlayer() {
 		canLaunch = true;
 
 		player.transform.SetParent (animalSpot.transform);

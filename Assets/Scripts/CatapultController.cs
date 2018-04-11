@@ -10,9 +10,6 @@ public class CatapultController : MonoBehaviour
     RectTransform wheel;        //wheel  object
 
     [SerializeField]
-    Oscillator osciallator;    //oscillator graphical representation
-
-    [SerializeField]
     float maxDist;              //max distance from wheel center to track touch position
 
     [SerializeField]
@@ -27,12 +24,6 @@ public class CatapultController : MonoBehaviour
     [SerializeField]
     float moveMargin;           // touch move distance margin 
 
-    [SerializeField]
-    float oExtSpeed;            // oscillation speed added to base speed
-
-    [SerializeField]
-    float oMinSpeed;            // min oscillator speed
-
     float fingerId;             // controlling finger
     float fingerAngel;
     float fingerPrevAngle;      // rotation from previous frame
@@ -41,28 +32,26 @@ public class CatapultController : MonoBehaviour
     float sum;                  // rotation
     float maxSum;               // max rotation
 
+    float aState;               // State of rotation(0-1, 0 = 0, 1 = maxSum)
+
     float timer;                // value of the timer
     bool fingerIn;              // is finger in range of wheel
     bool timerActive;
     bool launched;
 
-    float aState;               // State of rotation(0-1, 0 = 0, 1 = maxSum)
-    float oState;               // Oscillation state(0-1, 0.5 perfect value)
-    float oDirection;           // direction of oscillation
-
     Launcher launcher;
+    Oscillator oscillator;    //oscillator graphical representation and logic
 
     // Use this for initialization
     void Start()
     {
         sum = 0;
-        oState = 0.5f;
-        oDirection = 1;
         fingerIn = false;
         timerActive = false;
         launched = false;
         maxSum = maxSpins * Mathf.PI * 2;
         launcher = GetComponent<Launcher>();
+        oscillator = GetComponent<Oscillator>();
     }
 
     // Update is called once per frame
@@ -71,7 +60,7 @@ public class CatapultController : MonoBehaviour
         if (!launched && timer < lounchTime && Mathf.Abs(sum) < maxSum) // if not launched, have time and can rotate
         {
             SpinLogic();
-            OscillationLogic();
+            oscillator.OscillationLogic(aState);
         }
         else // else shoot and reset
         {
@@ -149,25 +138,6 @@ public class CatapultController : MonoBehaviour
     }
 
 
-    void OscillationLogic()
-    {
-        float step = (oExtSpeed * aState + oMinSpeed) * oDirection;
-
-        if (oState + step >= 1) 
-        {
-            oState = 1 - ((oState + step) - 1);
-            oDirection = -1;
-        }
-        else if ((oState + step) <= 0)
-        {
-            oState = (oState + step) * -1;
-            oDirection = 1;
-        }
-        else oState += step;
-
-        osciallator.SetArrow(oState);
-    }
-
     void Reset()
     {
         sum = 0;
@@ -191,8 +161,7 @@ public class CatapultController : MonoBehaviour
 
     void Done() // launch launcher and passes state of oscillator
     {
-        print(oState);
-        launcher.SetLaunch(oState);
+        launcher.SetLaunch(oscillator.oState);
     }
 
 }
