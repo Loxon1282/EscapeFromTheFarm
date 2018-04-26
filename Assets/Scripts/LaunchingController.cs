@@ -15,7 +15,7 @@ public class LaunchingController : MonoBehaviour {
 
 	public GameObject spoon;
 	public GameObject animalSpot; // gameobject fixed to spoon position
-	public GameObject worldTransform; // object that is highest in hierarhy
+	public GameObject worldTransform; // object that is highest in hierarchy
 	public GameObject loader; // crank
 	public GameObject player; // animal
 
@@ -38,7 +38,7 @@ public class LaunchingController : MonoBehaviour {
 	public float spoonSpeed;
 	public int loaderMultiplier;
 
-	public float fastSpeed; // lauching spoon
+	public float fastSpeed; // launching spoon
 	public float slowSpeed; // loading spoon
 
 	private bool canMove;
@@ -120,7 +120,7 @@ public class LaunchingController : MonoBehaviour {
 
 
 	// Resets player position after launch
-	void ResetPlayer() {
+	public void ResetPlayer() {
 		canLaunch = true;
 
 		player.transform.SetParent (animalSpot.transform);
@@ -141,7 +141,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to lowest position (370)
-	void SetSpoonToLounch() {
+	public void SetSpoonToLounch() {
 		canMove = true;
 		movingUpwards = false;
 		destinationAngle = lowerBound;
@@ -150,7 +150,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to highets position (260)
-	void FireSpoon() {
+	public void FireSpoon() {
 		canMove = true;
 		movingUpwards = true;
 		destinationAngle = upperBound;
@@ -159,7 +159,7 @@ public class LaunchingController : MonoBehaviour {
 	}
 
 	// Sets spoon to a middle position
-	void ResetSpoonPosition() {
+	public void ResetSpoonPosition() {
 		canMove = true;
 		destinationAngle = centerAngle;
 		movingUpwards = (spoonAngle <= centerAngle) ? false : true	;

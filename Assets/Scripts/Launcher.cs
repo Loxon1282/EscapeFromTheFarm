@@ -9,13 +9,15 @@ public class Launcher : MonoBehaviour
     [SerializeField]
     GameObject spoon;
     [SerializeField]
-    GameObject projectal;          // animal
+    GameObject projectal;       // animal
     [SerializeField]
     float speed;                // rotation speed
     [SerializeField]
     float lPower;               // launch power an angle  
     [SerializeField]
-    float lAngle;
+    float perfAngle;
+    [SerializeField]
+    float deviationAngle;
 
     float aFrom;
     float aTo;
@@ -26,6 +28,7 @@ public class Launcher : MonoBehaviour
     float launchingBound;       // around 280/290
 
     Vector3 launchVector;
+    float lAngle;
     float lState;
 
     bool controled;             // is launcher controlled by controller
@@ -38,8 +41,6 @@ public class Launcher : MonoBehaviour
         upperBound = 300;
         launchingBound = 270;
         aState = 0;
-        launchVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad*lAngle), Mathf.Sin(Mathf.Deg2Rad * lAngle),0);
-        launchVector = launchVector.normalized;
         SetAngles(upperBound,lowerBound);
         controled = true;
         working = true;
@@ -81,8 +82,11 @@ public class Launcher : MonoBehaviour
         aTo = to;
     }
 
-    public void SetLaunch()
+    public void SetLaunch(float angle = 0.5f) // perfect value for angle - 0.5
     {
+        lAngle = (perfAngle - deviationAngle) + angle * deviationAngle * 2;
+        launchVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * lAngle), Mathf.Sin(Mathf.Deg2Rad * lAngle), 0);
+        launchVector = launchVector.normalized;
         lState = aState;
         controled = false;
         aState = Mathf.Abs((spoon.transform.rotation.eulerAngles.z - lowerBound) / (launchingBound - lowerBound));
